@@ -1,0 +1,161 @@
+\chapter{Opciones de \gagm}
+\label{chap:GAGMA}
+
+Los macros \texttt{defnode} y \texttt{gcode} utilizan la información de sus parámetros, para definición de clases, funciones constructoras, o realizar la generación de código. Por defecto, si no se especifican las opciones de los \textit{slots}, las palabras clave, el Lambda List y el cuerpo de las funciones constructoras y de los métodos; esta información será rellenada automáticamente. Debido a que el usuario puede necesitar distintas funcionalidades en el dominio de su DSL, en la próxima sección se presentan otras funcionalidades del macro \texttt{defnode} que permiten modificar el código generado por él. Además, en la sección \ref{lenguajesygcode} se muestra cómo se pueden automatizar las propiedades sintácticas de los lenguajes de salida si se añade el código necesario en la macro expansión de \texttt{gcode}. 
+
+
+\section{Opciones de defnode}
+\label{defnodeavanzado}
+En la definición de las clases y funciones constructoras existe un conjunto de propiedades que \texttt{defnode} completa con valores prefijados. El Lambda List de este macro tiene como primer parámetro el nombre de la clase a definir, como segundo, los nombres de sus super clases, como tercero, una lista con el nombre de sus \textit{slots} y luego un conjunto de parámetros opcionales que permiten modificar el código generado por él. La definición del nombre de la clase y de la lista de herencia es igual a la que se debe realizar con el macro \texttt{defclass}, pero en la definición de \textit{slots} y parámetros opcionales se presentan cambios. En las siguientes secciones se presentan estas modificaciones.
+
+\subsection{Slots}
+En el macro \texttt{defnode} cada elemento de la lista de nombres para los \textit{slots} hace referencia a la declaración de un \textit{slot} en la definición de la clase que se pretende crear, y estos pueden ser un símbolo o una lista. Si dicho elemento es un símbolo, la macro expansión de \texttt{defnode} rellena las opciones \texttt{accessor} e \texttt{initarg} con el mismo nombre del \textit{slot} (valores por defecto); si es una lista, se deben definir las opciones de \textit{slots} que se deseen y sus correspondientes valores.  
+
+En el siguiente ejemplo se muestra la definición de una clase con tres  \textit{slots}: 
+\begin{verbatim}
+        (defnode collection-definition-node () 
+	  	      (collection-name
+	  	       collection-type 
+	  	      (collection-capacity 
+	  	                          :initarg :capacity 
+	  	                          :initform 100)))
+\end{verbatim}
+
+En este caso, los dos primeros \textit{slots} (\texttt{collection-name y collection- type}) serán rellenados con los valores por defecto, pero en el caso del tercero \texttt{collection-capacity},  se definen las propiedades \texttt{initarg} e \texttt{initform}, por lo que estos valores sustituirán los generados por defecto. Este comportamiento se puede apreciar en un fragmento de la macro expansión del código anterior:
+\begin{verbatim}
+	     (defclass collection-definition-node () 
+	          ((collection-name 
+	                 :accessor  collection-name
+	                 :initarg  :collection-name 
+	                 :allocation instance 
+	                 :initform nil 
+	                 :documentation “empty”)
+	           (collection-type 
+	                 :accessor  collection-type
+	                 :initarg  :collection-type 
+	                 :allocation instance 
+	                 :initform nil 
+	                 :documentation “empty”)
+	            (collection-capacity 
+	                 :accessor collection-capacity
+	                 :initarg: capacity
+                     :allocation instance
+	                 :initform 100
+	                 :documentation “empty”))
+\end{verbatim}
+
+El macro \texttt{defnode} emplea un conjunto de palabras clave para agregar o modificar el código que genera su expansión. Estas palabras clave son especificadas en el último argumento del Lambda List de dicho macro a través de parámetros nombrados, que se presentan a continuación.
+
+\subsection{Nombre de una función constructora}
+El nombre de una función constructora se especifica mediante la palabra clave \texttt{func-name}.\\ 
+A continuación, se define la clase \texttt{collection-insert-node} y el nombre para su función constructora es \texttt{collection-insert}:
+
+\begin{verbatim}
+	        (defnode collection-insert-node () (name value) 
+	            (:func-name collection-insert))
+\end{verbatim}
+
+\subsection{Lambda List de una función constructora}
+Por defecto, el Lambda List de una función constructora está formado por los nombres de las opciones \texttt{initarg} de los \textit{slots} de la clase a instanciar. Estos se encuentran ordenados como fueron declarados en la definición de la clase:\\ 
+
+\begin{verbatim}
+	         (defnode collection-insert-node () 
+	                             (name value)
+	                             (:func-name collection-insert)))
+\end{verbatim}
+Un fragmento de su macro expansión es:
+\begin{verbatim}
+          (defun collection-insert (name  value))
+\end{verbatim}
+Como en el Lambda List de la función constructora que generó \texttt{defnode} aparecen los parámetros \texttt{name} y \texttt{value}, solo se puede insertar un elemento a una instancia de \texttt{collection-insert-node}:
+
+\begin{verbatim}
+          (collection-insert numbers-collection 7)
+\end{verbatim}
+		
+La palabra clave \texttt{lambda-list} permite definir el Lambda List de la función constructora. En este caso, el generado por \texttt{defnode} se sustituye por la nueva especificación de los parámetros.\\
+ 
+Por ejemplo, si se desea que la clase \texttt{collection-insert-node} reciba un número arbitrario de argumentos, se define su Lambda List como se muestra a continuación:
+\begin{verbatim}
+(defnode collection-insert-node () 
+                               (name value) 
+                               (:func-name collection-insert-range 
+                                :lambda-list (name &rest value)))
+\end{verbatim}
+Un fragmento de su macro expansión sería:
+\begin{verbatim}
+(defun collection-insert-range (name &rest value))
+\end{verbatim}
+
+Y a partir de esta definición se podría instanciar \texttt{collection-insert-range} como: 
+
+\begin{verbatim}
+(collection-insert-range  numbers-collection 4 5 6 7)
+\end{verbatim}
+
+\subsection{Cuerpo de una función constructora}
+
+El cuerpo de la función constructora se puede especificar con la palabra clave \texttt{ctr-body}:
+\begin{verbatim}
+(defnode collection-insert-node ()(name value)
+								(:ctr-body (make-instance 'collection-insert-node
+								               :name name)
+								               :value value))
+\end{verbatim}
+En este caso, el valor de ctr-body puede ser cualquier fragmento de código Lisp válido.
+\section{Sintaxis de los lenguajes y gcode}
+\label{lenguajesygcode}
+En la sintaxis de los lenguajes de salida se encuentran características comunes que pueden ser automatizadas. Entre ellas están las que se muestran en la figura \ref{Adol8} (e identificadas en ADOL*). Para ejemplificar el proceso de automatizar una nueva característica, en esta sección se presenta cómo se puede automatizar la indentación de los lenguajes utilizando el macro \texttt{gcode}. 
+
+En los lenguajes de la familia C, para mantener un estándar de código legible, las instrucciones deben tener cierta indentación; en el caso de Python, es obligatoria. Representar esta característica requiere implementar una clase para identificar los lenguajes indentables (con indentación). Dicha clase puede almacenar el incremento del desplazamiento en cada nivel de su indentación y la indentación actual donde se debe comenzar a escribir en el parámetro \texttt{stream} de la función \texttt{generate-code}. Una posible implementación para esta clase puede ser:
+
+\begin{verbatim}
+(defnode indentable-language () (indentation indent-increment))
+\end{verbatim}
+
+
+En la generación de código hacia los lenguajes indentables se pueden observar tres tipos de nodos del AST: los nodos que aumentan la indentación actual para generar el código de sus descendientes en un AST (\texttt{if}, \texttt{while} en \texttt{C\#}, \texttt{Java} y \texttt{Python}), los que requieren indentación (\texttt{if}, \texttt{while} y asignación a variable en \texttt{C\#}, \texttt{Java}, \texttt{Python}) y los que no (operaciones aritméticas en \texttt{C\#}). La indentación de un nodo del AST no depende de él, sino del lenguaje, pues en un lenguaje puede ser indentable y en otro no. 
+
+A continuación, se muestra un escenario en Python, donde se puede observar la indentación de los nodos \texttt{sum-node}, \texttt{variable-assignmnet} y \texttt{while} del AST, correspondientes a la operación binaria suma, a la declaración asignación a variable y a la instrucción \texttt{while}, respectivamente:
+
+\begin{verbatim}
+                    if Y < 100:
+		                        while X < 50:
+		                            X = Y + 1
+\end{verbatim}
+
+
+Como se puede observar en el ejemplo anterior, las instrucciones \texttt{if} y \texttt{while} aumentaron la indentación de los contextos que definen. Por ese motivo, la indentación de la instrucción \texttt{while} y de la asignación a la variable $X$ aumentaron. En el caso de la operación binaria suma $Y+1$, no se necesitó un cambio en la indentación.
+
+Para automatizar este proceso, se debe identificar por cada lenguaje indentable los nodos del AST que requieran indentación (nodos indentables); y para los nodos que aumentan la indentación de sus descendientes, especificar en su generación de código cúando aumentar la indentación actual del lenguaje.
+
+Antes de generar el código de un nodo indentable se debe escribir en el flujo \texttt{stream} la cantidad de espacios (o tabulaciones) necesarios para alcanzar la indentación actual. Para ello, en Common Lisp, se puede utilizar el método extensor \texttt{:before} y especializarlo en la función genérica \texttt{generate-code} en el nodo y en el lenguaje indentable:
+\begin{verbatim}
+   (defmethod generate-code: before ((node node-type) 
+                       (language indentable-language)
+                                             stream))      
+\end{verbatim}
+
+Este método extensor puede ser encapsulado en un macro llamado \texttt{mark- node-as-indentable}. Los parámetros de este nuevo macro son el tipo del nodo a indentar y el tipo del lenguaje donde se quiere indentar. De esta forma, cuando se desee agregar un nuevo nodo indentable a un lenguaje, basta con realizar un llamado al macro \texttt{mark-node-as-indentable}:     
+\begin{verbatim}
+              (mark-node-as-indentable while language)
+\end{verbatim}
+
+
+Para finalizar la automatización de la indentación, se debe implementar las funciones que aumenten y que disminuyan la indentación actual. Estas funciones se deben llamar cada vez que se desee cambiar el nivel actual de indentación.
+
+{\gagm} posee la función \texttt{recognize-pattern} para automatizar las características sintácticas de los lenguajes. Dicha función recibe dos parámetros: un símbolo \texttt{symbol} y un código \texttt{code} válido en Common Lisp. Una llamada a \texttt{recognize-pattern} le indica a \texttt{gcode}, que en cada llamado que se le realice debe sustituir en su macro expansión a \texttt{symbol} por \texttt{code}. De esta forma, si se realizan dos llamados a la función \texttt{recognize-pattern}; el primero con el símbolo \texttt{indent} y la función para aumentar la indentación actual, y el segundo con el símbolo \texttt{deindent} y la función para disminuir la indentación actual; generar el código para el nodo \texttt{while} en \texttt{Python} sería:     
+
+\begin{verbatim}
+(gcode while python ("while (~a):~%" indent "~a~%" deindent) 
+       ((condition)(body))) 
+\end{verbatim}
+
+
+ En este capítulo se presentaron las opciones configurables del macro \texttt{defnode}, y se ejemplificó cómo se pueden automatizar las características sintácticas de los lenguajes, a partir de la inserción de código en el macro \texttt{gcode}.
+%\agregaesto{FINAL DE SECCIÓN}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Thesis"
+%%% End:

@@ -1,0 +1,270 @@
+\begin{thebibliography}{10}
+  \providebibliographyfont{name}{}%
+  \providebibliographyfont{lastname}{}%
+  \providebibliographyfont{title}{\emph}%
+  \providebibliographyfont{jtitle}{\btxtitlefont}%
+  \providebibliographyfont{etal}{\emph}%
+  \providebibliographyfont{journal}{}%
+  \providebibliographyfont{volume}{}%
+  \providebibliographyfont{ISBN}{\MakeUppercase}%
+  \providebibliographyfont{ISSN}{\MakeUppercase}%
+  \providebibliographyfont{url}{\url}%
+  \providebibliographyfont{numeral}{}%
+  \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+
+\expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+\bibitem {ODT}
+\btxjtitlefont {\btxifchangecase {Leyendo documentos odf (*.odt, *.ods, *.odp)
+  con apache openoffice}{Leyendo documentos ODF (*.odt, *.ods, *.odp) con
+  Apache OpenOffice}}.
+\newblock [Online, accedido 12-3-2017].
+\newblock {\latintext
+  \btxurlfont{https://www.openoffice.org/es/por-que/why_odf.html}}.
+
+\bibitem {R}
+\btxjtitlefont {\btxifchangecase {R, un lenguaje y entorno de programación
+  para análisis estadístico}{R, un lenguaje y entorno de programación para
+  análisis estadístico}}.
+\newblock [Online, accedido 12-3-2017].
+\newblock {\latintext
+  \btxurlfont{https://www.genbetadev.com/formacion/r-un-lenguaje-y-entorno-de-programacion-para-analisis-estadistico}}.
+
+\bibitem {BFN}
+\btxjtitlefont {\btxifchangecase {Syntax diagrams - backus normal form
+  (bnf)}{Syntax diagrams - Backus Normal Form (BNF)}}.
+\newblock [Online, accedido 4-2-2017].
+\newblock {\latintext \btxurlfont{https://ss64.com/docs/bnf.html}}.
+
+\btxselectlanguage {Español}
+\bibitem {gemural}
+\btxnamefont {\btxlastnamefont {Alayón}, Antonio\btxfnamespacelong
+  Rodríguez}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {Generación
+  multilenguaje de rutinas de Álgebra lineal}{Generación Multilenguaje de
+  Rutinas de Álgebra Lineal}}.
+
+\expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+\bibitem {AST}
+\btxnamefont {\btxlastnamefont {Alfred V.~Aho}, Jeffrey\btxfnamespacelong
+  D.\btxfnamespacelong Ullman}\btxauthorcolon\ \btxtitlefont {The theory of
+  parsing, translation, and compiling}, \btxvolumelong {}\ \btxvolumefont
+  {Volume I} \btxofserieslong {}\ \btxtitlefont {Prentice-Hall series in
+  automatic computation}.
+\newblock \btxpublisherfont {Prentice-Hall}, 1972\ifbtxprintISBN {,
+  \mbox{\btxISBN~\btxISBNfont {9780139145568,0139145567,0139145648}}}.
+\newblock {\latintext
+  \btxurlfont{http://gen.lib.rus.ec/book/index.php?md5=54B3C50B63C656128EE3564FC1B7D4E3}}.
+
+\bibitem {Land-of-Lisp}
+\btxnamefont {\btxlastnamefont {Barski}, Conrad}\btxauthorcolon\ \btxtitlefont
+  {Land of Lisp}.
+\newblock \btxpublisherfont {No Starch Press}, 2011.
+
+\btxselectlanguage {Español}
+\bibitem {Adol*}
+\btxnamefont {\btxlastnamefont {Castillo}, Manuel\btxfnamespacelong
+  Alejandro\btxfnamespacelong Cabrera}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Una posibilidad real de utilizar difenenciación
+  automática en cualquier lenguaje de programación}{Una posibilidad real de
+  utilizar Difenenciación Automática en cualquier lenguaje de
+  programación}}.
+
+\expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+\bibitem {yacc}
+\btxnamefont {\btxlastnamefont {Doug~Brown},~John~Levine,
+  Tony\btxfnamespacelong Mason}\btxauthorcolon\ \btxtitlefont {lex and yacc}.
+\newblock \btxpublisherfont {O’Reilly Media}, \btxnumerallong
+  {2}~\btxeditionlong {}, 1995.
+
+\bibitem {entity}
+\btxnamefont {\btxlastnamefont {Driscoll}, Brian}\btxauthorcolon\ \btxtitlefont
+  {Entity Framework 6 Recipes}.
+\newblock \btxpublisherfont {Apress}, \btxnumerallong {2}~\btxeditionlong {},
+  2013.
+
+\bibitem {asp.netcore}
+\btxnamefont {\btxlastnamefont {FREEMAN}, ADAM}\btxauthorcolon\ \btxtitlefont
+  {Pro ASP.NET Core MVC}.
+\newblock \btxpublisherfont {Apress}, \btxnumerallong {6}~\btxeditionlong {},
+  2016.
+
+\bibitem {graph}
+\btxnamefont {\btxlastnamefont {Gansner}, Emden}, \btxnamefont {Eleftherios
+  \btxlastnamefont {Koutsofios}}\btxandcomma {} \btxandlong {}\ \btxnamefont
+  {Stephen \btxlastnamefont {North}}\btxauthorcolon\ \btxpublisherfont
+  {\btxtitlefont {Drawing graphs with dot}}.
+\newblock 2006.
+
+\bibitem {onlisp}
+\btxnamefont {\btxlastnamefont {Graham}, Paul}\btxauthorcolon\ \btxtitlefont
+  {On LISP: Advanced Techniques for Common LISP}.
+\newblock \btxpublisherfont {Prentice Hall}, \btxnumerallong
+  {1st}~\btxeditionlong {}, 1993.
+
+\bibitem {ansi-common-lisp}
+\btxnamefont {\btxlastnamefont {Graham}, Paul}\btxauthorcolon\ \btxtitlefont
+  {ANSI Common LISP}.
+\newblock Prentice Hall series in artificial intelligence. \btxpublisherfont
+  {Prentice Hall}, \btxnumerallong {1st edition}~\btxeditionlong {}, 1996.
+
+\bibitem {Da}
+\btxnamefont {\btxlastnamefont {Griewank},~Andreas, y\btxfnamespacelong
+  Andrea\btxfnamespacelong Walthe}\btxauthorcolon\ \btxtitlefont {Evaluating
+  Derivatives: Principles and Techniques of Algorithmic Differentiation}.
+\newblock \btxpublisherfont {SIAM}, \btxnumerallong {2da}~\btxeditionlong {},
+  2008.
+
+\bibitem {dslEngineering}
+\btxnamefont {\btxlastnamefont {Helander}, Markus\btxfnamespacelong
+  Voelter;\btxfnamespacelong Sebastian\btxfnamespacelong
+  Benz;\btxfnamespacelong Christian\btxfnamespacelong
+  Dietrich;\btxfnamespacelong Mats}\btxauthorcolon\ \btxpublisherfont
+  {\btxtitlefont {DSL Engineering. Designing, Implementing and Using
+  Domain-Specific Languajes}}.
+\newblock 2010-2013.
+
+\bibitem {latex}
+\btxnamefont {\btxlastnamefont {Helmut~Kopka}, Patrick\btxfnamespacelong
+  W.\btxfnamespacelong Daly}\btxauthorcolon\ \btxtitlefont {A Guide to LATEX:
+  Document Preparation for Beginners and Advanced Users (3rd Edition)}.
+\newblock \btxpublisherfont {Addison-Wesley Professional}, 1999.
+
+\btxselectlanguage {Español}
+\bibitem {hoyos}
+\btxnamefont {\btxlastnamefont {Hoyos}, Jorge\btxfnamespacelong
+  Luis}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {Un lenguaje para
+  representar modelos matemáticos en lisp}{Un Lenguaje para representar
+  Modelos Matemáticos en Lisp}}, 2017.
+
+\expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+\bibitem {let-over-lambda}
+\btxnamefont {\btxlastnamefont {Hoyte}, Doug}\btxauthorcolon\ \btxtitlefont
+  {Let Over Lambda : 50 years of lisp}.
+\newblock \btxpublisherfont {Doug Hoyte/HCSW and Hoytech production}, 2008.
+
+\bibitem {pdf}
+\btxnamefont {\btxlastnamefont {Inc.}, Adobe\btxfnamespacelong
+  Systems}\btxauthorcolon\ \btxpublisherfont {\btxtitlefont {PDF Reference
+  Version 1.7}}.
+\newblock \btxnumerallong {6}~\btxeditionlong {}, 2006.
+
+\bibitem {ruby}
+\btxnamefont {\btxlastnamefont {J.}, Adam}\btxauthorcolon\ \btxpublisherfont
+  {\btxtitlefont {Addison-Wesley Professional Ruby Series Rails Plugins:
+  Extending Rails Beyond the Core}}.
+\newblock 2006.
+
+\bibitem {xtext}
+\btxnamefont {\btxlastnamefont {L.}, Bettini}\btxauthorcolon\ \btxtitlefont
+  {Implementing domain-specific languages with Xtext and Xtend}.
+\newblock \btxpublisherfont {Packt}, 2013.
+
+\bibitem {successful-lisp}
+\btxnamefont {\btxlastnamefont {Lamkins}, David\btxfnamespacelong
+  B.}\btxauthorcolon\ \btxtitlefont {Successful Lisp.How to understand and use
+  Common Lisp}.
+\newblock \btxpublisherfont {bookfix.com}, 2004.
+
+\bibitem {clos-overview}
+\btxnamefont {\btxlastnamefont {L.G.}, DeMichiel}\btxauthorcolon\
+  \btxpublisherfont {\btxtitlefont {The Common Lisp object system. An
+  overview}}.
+
+\bibitem {dsl1}
+\btxnamefont {\btxlastnamefont {M}, Mernik}\btxauthorcolon\ \btxtitlefont
+  {Formal and Practical Aspects of Domain-Specific Languages Recent
+  Developments}.
+\newblock Premier Reference Source. \btxpublisherfont {IGI Global}, 2013.
+
+\bibitem {meyer}
+\btxnamefont {\btxlastnamefont {Meyer}, Bertrand}\btxauthorcolon\ \btxtitlefont
+  {Object Oriented Software Construction}.
+\newblock \btxpublisherfont {Prentice Hall}, \btxnumerallong
+  {2nd}~\btxeditionlong {}, 2000.
+
+\btxselectlanguage {Español}
+\bibitem {cami}
+\btxnamefont {\btxlastnamefont {Mosquera}, Camila\btxfnamespacelong
+  Pérez}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {Primeras
+  aproximaciones a la búsqueda de vecidad infinitamente variable}{Primeras
+  aproximaciones a la Búsqueda de Vecidad Infinitamente Variable}}, 2017.
+
+\expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+\bibitem {matlab}
+\btxnamefont {\btxlastnamefont {Palm}, William\btxfnamespacelong
+  J}\btxauthorcolon\ \btxtitlefont {A concise introduction to MATLAB}.
+\newblock \btxpublisherfont {McGraw-Hill}, 2008.
+
+\bibitem {antlr}
+\btxnamefont {\btxlastnamefont {Parr}, Terence}\btxauthorcolon\ \btxtitlefont
+  {The Definitive ANTLR 4 Reference, 2nd Edition}.
+\newblock \btxpublisherfont {Pragmatic Bookshelf}, \btxnumerallong
+  {2nd}~\btxeditionlong {}, 2013.
+
+\bibitem {HTML}
+\btxnamefont {\btxlastnamefont {Powell}, Thomas}\btxauthorcolon\ \btxtitlefont
+  {HTML: The Complete Reference, Second Edition}.
+\newblock \btxpublisherfont {The McGraw-Hill Companies},
+  \btxprintmonthyear{.}{May,June}{1999}{long}.
+
+\bibitem {DSM}
+\btxnamefont {\btxlastnamefont {Riesco}, Claudia\btxfnamespacelong
+  Naveda;\btxfnamespacelong Alberto\btxfnamespacelong Cortez;\btxfnamespacelong
+  Germán\btxfnamespacelong Montejano;\btxfnamespacelong
+  Daniel}\btxauthorcolon\ \btxjtitlefont {\btxifchangecase {Lenguaje
+  específico de dominio para aplicaciones de negocios}{Lenguaje Específico de
+  Dominio para Aplicaciones de Negocios}}.
+
+\bibitem {texinfo}
+\btxnamefont {\btxlastnamefont {R.J.}, Chassell}\btxauthorcolon\
+  \btxpublisherfont {\btxtitlefont {Texinfo 4.0}}.
+\newblock 2000.
+
+\bibitem {implementations_DSL}
+\btxnamefont {\btxlastnamefont {Rossun; Dan Bornstein; Tom Nurkkala;
+  Kyle~Ferrio}, PhD~Guido~van}\btxauthorcolon\ \btxtitlefont {Languaje
+  Implementation Patterns. Create Your Own Domain Specific and General
+  Programming Languages}, \btxpublisherfont {\btxvolumelong {}\ \btxvolumefont
+  {2010-1-4}}.
+\newblock \btxnumerallong {3}~\btxeditionlong {}, 2009.
+
+\bibitem {sonya}
+\btxnamefont {\btxlastnamefont {S.E.}, Keene}\btxauthorcolon\ \btxpublisherfont
+  {\btxtitlefont {Object-Oriented Programming in Common Lisp}}.
+\newblock 1989.
+
+\bibitem {practical-common-lisp}
+\btxnamefont {\btxlastnamefont {Seibel}, Peter}\btxauthorcolon\ \btxtitlefont
+  {Practical Common Lisp}.
+\newblock \btxpublisherfont {APRESS / SPRINGER-VERLAG}, 1980.
+
+\bibitem {emacs}
+\btxnamefont {\btxlastnamefont {Stallman}, Richard}\btxauthorcolon\
+  \btxpublisherfont {\btxtitlefont {Emacs manual}}.
+\newblock 1997.
+
+\bibitem {cltl2}
+\btxnamefont {\btxlastnamefont {Steele}, Guy}\btxauthorcolon\ \btxpublisherfont
+  {\btxtitlefont {Common Lisp, The Language, 2nd Edition}}.
+\newblock \btxnumerallong {2}~\btxeditionlong {}, 1990.
+
+\bibitem {gentle-introduction-to-common-lisp}
+\btxnamefont {\btxlastnamefont {Touretzky}, David\btxfnamespacelong
+  S.}\btxauthorcolon\ \btxtitlefont {Common Lisp. A Gentle Introduction To
+  Symbolic Computation}.
+\newblock \btxpublisherfont {Benjamin-Cummings Pub Co}, 1989.
+
+\bibitem {dsltools}
+\btxnamefont {\btxlastnamefont {Wills}, Steve\btxfnamespacelong
+  Cook;\btxfnamespacelong Gareth\btxfnamespacelong Jones;\btxfnamespacelong
+  Stuart\btxfnamespacelong Kent;\btxfnamespacelong Alan\btxfnamespacelong
+  Cameron}\btxauthorcolon\ \btxtitlefont {Domain-Specific Development with
+  Visual Studio DSL Tools}.
+\newblock \btxpublisherfont {Addison-Wesley}, 2007.
+
+\bibitem {markdown}
+\btxnamefont {\btxlastnamefont {Xie}, Yihui}\btxauthorcolon\ \btxtitlefont
+  {bookdown: Authoring Books and Technical Documents with R Markdown}.
+\newblock Chapman Hall CRC R Series. \btxpublisherfont {Chapman Hall CRC},
+  2016.
+
+\end{thebibliography}

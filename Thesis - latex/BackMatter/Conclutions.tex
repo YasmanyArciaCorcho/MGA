@@ -1,0 +1,22 @@
+\begin{conclusions}
+En este trabajo se identificaron las principales etapas en la construcción de un Generador Multilenguaje, se presentó una metodología para desarrollar estas aplicaciones en el lenguaje de programación Common Lisp, y se automatizó la escritura de código repetido y mecánico.   
+
+Para automatizar la escritura de código se crearon dos macros fundamentales: \texttt{defnode} que permite automatizar la definición de clases y sus funciones constructoras, y \texttt{gcode}, que simplifica la generación de código, y está inspirado en una funcionalidad similar existente en trabajos anteriores.
+
+Utilizar los macros creados en {\gagm} posibilita escribir, en pocas líneas de código, Generadores Multilenguajes que usualmente necesitan en su implementación grandes cantidades de líneas de código. Con la herramienta presentada en este proyecto, definir el DSL de un Generador Multilenguaje es realizar una selección adecuada de los nombres y de los campos para los elemento de su dominio, y su generación de código hacia los distintos lenguajes se convierte en encontrar patrones que se repiten, encapsularlos, y dedicarse solamente, a escribir el código diferente de cada uno de los elementos de su dominio. 
+\end{conclusions}
+
+\begin{recomendations}
+	A partir de la investigación realizada se recomienda para trabajos futuros:
+	
+	\begin{itemize}
+		\item Automatizar nuevas características comunes en la sintaxis de los lenguajes de programación.
+		\item Añadir a los macros como posibles funciones constructoras.
+		\item Agregar nuevas funciones o métodos en la macro expansión de \texttt{defnode}.
+	\end{itemize}
+\end{recomendations}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Thesis"
+%%% End:

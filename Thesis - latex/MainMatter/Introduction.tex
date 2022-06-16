@@ -1,0 +1,40 @@
+\begin{introduction}
+  
+Un lenguaje de dominio específico (DSL, por sus siglas en ingl\'es) es un conjunto de construcciones y operaciones que brindan una mayor expresividad para representar soluciones de un dominio en particular \cite{dslEngineering}. Los DSLs pueden ser internos en un lenguaje de programaci\'on o externos \cite{dsl1}. Algunos ejemplos de DSLs son: BNF (\textit{Backus Normal Form}) para describir la sintaxis de los lenguajes de programaci\'on \cite{BFN}; Matlab \cite{matlab}, utilizado para el trabajo con matrices, y el lenguaje de programaci\'on R, diseñado por estad\'isticos y para estad\'isticos \cite{R}. Por lo general, a partir de programas escritos en estos DSLs, se genera el código ejecutable de los mismos, o se transforman en código fuente de un lenguaje de programación específico y este último se compila \cite{dslEngineering} \cite{implementations_DSL} \cite{dsl1}. 
+
+Para el diseño e implementaci\'on de DSLs, se pueden usar herramientas como {DSL Tools} para la plataforma .NET \cite{dsltools} y el framework XText de Java \cite{xtext}. 
+
+Existen escenarios en los que se desea representar en distintos formatos (o lenguajes de programación) el código de programas escritos en un DSL específico. Por ejemplo, cuando se quiere representar el mismo documento en varios formatos como HTML \cite{HTML} y PDF \cite{pdf}, o cuando se desea obtener el código fuente en varios lenguajes de programación de bibliotecas de Diferenciación Automática implementadas en un DSL \cite{Da}. Para el primer escenario, existen aplicaciones como TexInfo \cite{texinfo}, {Markdown} \cite{markdown}, y el Modo Org de Emacs \cite{emacs}, que a partir de la representación de un documento en un lenguaje de marcado específico,  permiten obtenerlo en varios formatos; y para el segundo escenario, existen aplicaciones como ADOL* \cite{Adol*}. Este tipo de herramientas constituyen el objeto de estudio de este trabajo, y serán llamadas Generadores Multilenguajes.
+
+Un Generador Multilenguaje es una aplicación que define un DSL, y permite representar en múltiples formatos los programas escritos en \'el. Dichos  formatos serán llamados lenguajes de salida. Para construir un Generador Multilenguaje, es necesario diseñar e implementar un DSL que represente su dominio y posteriormente especificar c\'omo se escribe cada componente del DSL en los lenguajes de salida.
+
+En los \'ultimos años, en la Facultad de Matemática y Computaci\'on de la Universidad de La Habana (MATCOM) se han desarrollado Generadores Multilenguajes en varios dominios como \emph{ADOL*} para la creaci\'on de bibliotecas de Diferenciaci\'on Autom\'atica;  \emph{LAML} que permite expresar modelos de programación matemática \cite{hoyos}; y un lenguaje para la descripción de criterios de vecindad en problemas de enrutamiento de vehículos (IVNS) \cite{cami}. Todas estas aplicaciones se han implementado como DSLs internos en el lenguaje de programación Common Lisp, aprovechando la notación infija del mismo, y utilizando como palabras clave del DSL los constructores de las clases que representan los nodos de los posibles \'Arboles de Sintaxis Abstracta (ASTs).
+
+
+%Actualmente, se est\'a desarrollando dos proyectos en esta misma l\'inea: un lenguaje de modelaci\'on algebraico para problemas de optimización [tesis de hoyos] y un lenguaje para describir criterios de vecindad en algoritmos de b\'usqueda local para problemas de enrutamiento de veh\'iculos [ref camila]. 
+
+
+
+En la construcción de un Generador Multilenguaje se puede identificar un conjunto de pasos necesarios para el desarrollo del mismo:
+
+\begin{enumerate}
+	\item Determinar el dominio que se quiere representar en el DSL.
+	\item Identificar los elementos que se desean representar en el DSL.
+	\item \label{item:diseñar-dsl} Dise\~nar el lenguaje del DSL.
+	\item \label{item:jerarquia-de-clases}Implementar una jerarqu\'ia de clases que permita representar cada uno de los elementos del DSL como nodos de un AST.
+	\item \label{item:paso-parser-lexer} Construir el analizador lexicogr\'afico y el sint\'actico.
+	\item 	\label{item:generacion-de-codigo}Implementar la generaci\'on de c\'odigo de cada uno de los nodos del AST, en cada uno de los lenguajes de salida.
+  \end{enumerate}
+
+  Cuando el DSL del Generador Multilenguaje es un lenguaje interno de Common Lisp, el paso \ref{item:diseñar-dsl} se convierte en una selección apropiada de nombres para los constructores de las clases del AST, y el paso \ref{item:paso-parser-lexer} no es necesario, pues este proceso lo realiza el intérprete de Lisp. Además, los pasos \ref{item:jerarquia-de-clases} y \ref{item:generacion-de-codigo} se pueden automatizar utilizando macros y el Sistema de Objetos de Common Lisp.
+
+  La principal contribución de este trabajo es la propuesta de una nueva herramienta en Common Lisp, denominada Automatización de Generadores Multilenguajes (\gagm\footnote{Multi-languages Generators Automation}), para la automatización de los pasos \ref{item:jerarquia-de-clases} y \ref{item:generacion-de-codigo} en la creación de Generadores Multilenguajes en Common Lisp. Esto se traduce en automatizar el proceso de creación de las clases para representar los elementos del dominio como nodos de un AST y simplificar la generación de código de cada uno de estos nodos en los diferentes lenguajes de salida.
+
+Para desarrollar este trabajo fue necesario estudiar el diseño e implementación de DSLs, elementos de compilación y el lenguaje de programación Common Lisp. Dichos elementos se presentan en el Capítulo \ref{chap:basis}. Independientemente del lenguaje de programación donde se desee implementar un Generador Multilenguaje, los pasos para construirlo son similares. En el Capítulo \ref{chap:implementacion de un generador } se ilustran sus pasos a través de la definición de BASAR, un Generador Multilenguaje orientado al trabajo con operaciones aritméticas. El Capítulo \ref{chap:GAGM} está dedicado a presentar como se pueden implementar estos programas en Common Lisp, a encontrar patrones de código que se repiten en este proceso; y se presentan los macros \texttt{defnode} y \texttt{gcode}, cuyo uso elimina el código que se repite. El código que generan los macros \texttt{defnode} y \texttt{gcode} es completamente modificable como se muestra en el Capítulo \ref{chap:GAGMA}. Finalmente se presentan las conclusiones, recomendaciones y la bibliografía consultada.
+
+
+\end{introduction}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Thesis"
+%%% End:

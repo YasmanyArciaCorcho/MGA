@@ -1,0 +1,37 @@
+\documentclass[11pt,twoside]{uhthesis}
+\usepackage{subfigure}
+
+\title{Propuesta de un sistema distribuido para la detección de 
+anomalías en el ámbito de la gestión de red.}
+\author{Ana Ivis Piedra León}
+\advisor{Dr. Yudivián Almeida Cruz \\ \hspace{1.5cm} Lic. Idis González Castaño}
+\degree{Licenciado en Ciencia de la Computación}
+\faculty{Facultad de Matemática y Computación}
+\date{Junio de 2012}
+\logo{Graphics/uhlogo}
+\makenomenclature
+
+\begin{document}
+\frontmatter
+\maketitle
+
+\include{FrontMatter/Dedication}
+\include{FrontMatter/Acknowledgements}
+\include{FrontMatter/SupervisorOpinion}
+\include{FrontMatter/Abstract}
+\include{FrontMatter/Contents}
+
+\mainmatter
+\include{MainMatter/Introduction}
+\include{MainMatter/Background}
+\include{MainMatter/Basis}
+\include{MainMatter/Design}
+\include{MainMatter/ImplementationDetails}
+\include{MainMatter/ServicesImplementation}
+
+\backmatter
+\include{BackMatter/Conclutions}
+\include{BackMatter/Bibliography}
+\include{BackMatter/Glosary}
+
+\end{document}

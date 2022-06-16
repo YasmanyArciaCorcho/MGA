@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: FrontMatter/Dedication.aux
+A level-1 auxiliary file: FrontMatter/Acknowledgements.aux
+A level-1 auxiliary file: FrontMatter/SupervisorOpinion.aux
+A level-1 auxiliary file: FrontMatter/Abstract.aux
+A level-1 auxiliary file: FrontMatter/Contents.aux
+A level-1 auxiliary file: MainMatter/Introduction.aux
+A level-1 auxiliary file: MainMatter/Basis.aux
+A level-1 auxiliary file: MainMatter/Design.aux
+A level-1 auxiliary file: MainMatter/introGAGM.aux
+A level-1 auxiliary file: MainMatter/GAGMA.aux
+A level-1 auxiliary file: BackMatter/Conclutions.aux
+A level-1 auxiliary file: BackMatter/Bibliography.aux
+The style file: babplain-uh.bst
+Database file #1: Bibliography.bib
+Warning--entry type for "cami" isn't style-file defined
+--line 1 of file Bibliography.bib
+Warning--entry type for "gemural" isn't style-file defined
+--line 10 of file Bibliography.bib
+Warning--entry type for "hoyos" isn't style-file defined
+--line 20 of file Bibliography.bib
+Warning--entry type for "Adol*" isn't style-file defined
+--line 29 of file Bibliography.bib
+Warning--to sort, need author or key in BFN
+Warning--to sort, need author or key in R
+Warning--to sort, need author or key in ODT
+Warning--empty language in ODT
+Warning--empty author in ODT
+Warning--empty journal in ODT
+Warning--empty author in R
+Warning--empty journal in R
+Warning--empty author in BFN
+Warning--empty journal in BFN
+Warning--empty language in AST
+Warning--empty language in yacc
+Warning--empty publisher in graph
+Warning--empty publisher in dslEngineering
+Warning--empty language in let-over-lambda
+Warning--empty publisher in pdf
+Warning--empty publisher in ruby
+Warning--empty publisher in clos-overview
+Warning--empty year in clos-overview
+Warning--empty language in matlab
+Warning--empty journal in DSM
+Warning--empty year in DSM
+Warning--empty publisher in texinfo
+Warning--empty publisher in implementations_DSL
+Warning--empty publisher in sonya
+Warning--empty publisher in emacs
+Warning--empty publisher in cltl2
+(There were 31 warnings)

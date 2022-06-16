@@ -1,0 +1,14 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{IETF}]\begingroup \emph{Internet Engineering Task Force}\nomeqref {0}
+		\nompageref{1}
+  \item [{MRTG}]\begingroup \emph{Multi Router Traffic Grapher}\nomeqref {0}
+		\nompageref{2}
+  \item [{RMON}]\begingroup \textit{Remote Network Monitoring}\nomeqref {0}
+		\nompageref{1}
+  \item [{SNMP}]\begingroup \emph{Simple Network Management Protocol}\nomeqref {0}
+		\nompageref{1}
+
+\end{thenomenclature}

@@ -1,0 +1,1113 @@
+% This file was created with JabRef 2.7b.
+% Encoding: UTF-8
+
+@INPROCEEDINGS{Ahmed2007,
+  author = {Ahmed, T. and Oreshkin, B. and Coates, M.},
+  title = {Machine learning approaches to network anomaly detection},
+  booktitle = {Proceedings of the 2nd USENIX workshop on Tackling computer systems
+	problems with machine learning techniques},
+  year = {2007},
+  series = {SYSML'07},
+  pages = {7:1--7:6},
+  address = {Berkeley, CA, USA},
+  publisher = {USENIX Association},
+  articleno = {7},
+  location = {Cambridge, MA},
+  numpages = {6}
+}
+
+@ARTICLE{AlKasassbeh2009,
+  author = {Mouhammd Al-Kasassbeh and Mo Adda},
+  title = {Network fault detection with Wiener filter-based agent},
+  journal = {Journal of Network and Computer Applications},
+  year = {2009},
+  volume = {32},
+  pages = {824 - 833},
+  number = {4},
+  issn = {1084-8045},
+  publisher = {Elsevier Ltd.}
+}
+
+@ARTICLE{Besaw1987,
+  author = {Besaw, L.},
+  title = {Berkeley UNIX System Calls and Interprocess Communication},
+  year = {1987},
+  month = {1},
+  owner = {ana},
+  timestamp = {2012.04.05}
+}
+
+@ARTICLE{Birrell1984,
+  author = {Birrell, A. D. and Nelson, B. J.},
+  title = {Implementing remote procedure calls},
+  journal = {ACM Trans. Comput. Syst.},
+  year = {1984},
+  volume = {2},
+  pages = {39--59},
+  month = {2},
+  owner = {ana},
+  timestamp = {2012.02.23}
+}
+
+@MISC{Blumenthal2004,
+  author = {Blumenthal, U. and Maino, F. and McCloghrie, K.},
+  title = {The Advanced Encryption Standard (AES) Cipher Algorithm in the SNMP
+	User-based Security Model},
+  howpublished = {RFC 3826 (Proposed Standard)},
+  month = {6},
+  year = {2004},
+  institution = {Internet Engineering Task Force},
+  number = {3826},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Blumenthal2002,
+  author = {Blumenthal, U. and Wijnen, B.},
+  title = {User-based Security Model (USM) for version 3 of the Simple Network
+	Management Protocol (SNMPv3)},
+  howpublished = {RFC 3414 (Standard)},
+  month = {12},
+  year = {2002},
+  institution = {Internet Engineering Task Force},
+  number = {3414},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Brownlee1999,
+  author = {Brownlee, N. and Mills, C. and Ruth, G.},
+  title = {Traffic Flow Measurement: Architecture},
+  howpublished = {RFC 2722 (Informational)},
+  month = {10},
+  year = {1999},
+  institution = {Internet Engineering Task Force},
+  number = {2722},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.05.21}
+}
+
+@MISC{Case1990,
+  author = {Case, J.D. and Fedor, M. and Schoffstall, M.L. and Davin, J.},
+  title = {A Simple Network Management Protocol (SNMP)},
+  howpublished = {RFC 1157 (Historic)},
+  month = {5},
+  year = {1990},
+  institution = {Internet Engineering Task Force},
+  number = {1157},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Case2002a,
+  author = {Case, J. and Harrington, D. and Presuhn, R. and Wijnen, B.},
+  title = {Message Processing and Dispatching for the Simple Network Management
+	Protocol (SNMP)},
+  howpublished = {RFC 3412 (Standard)},
+  month = {12},
+  year = {2002},
+  institution = {Internet Engineering Task Force},
+  number = {3412},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Case1996,
+  author = {Case, J. and McCloghrie, K. and Rose, M. and Waldbusser, S.},
+  title = {Introduction to Community-based SNMPv2},
+  howpublished = {RFC 1901 (Historic)},
+  month = {1},
+  year = {1996},
+  institution = {Internet Engineering Task Force},
+  number = {1901},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Case1996a,
+  author = {Case, J. and McCloghrie, K. and Rose, M. and Waldbusser, S.},
+  title = {Structure of Management Information for Version 2 of the Simple Network
+	Management Protocol (SNMPv2)},
+  howpublished = {RFC 1902 (Draft Standard)},
+  month = {1},
+  year = {1996},
+  institution = {Internet Engineering Task Force},
+  number = {1902},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Case1996b,
+  author = {Case, J. and McCloghrie, K. and Rose, M. and Waldbusser, S.},
+  title = {Coexistence between Version 1 and Version 2 of the Internet-standard
+	Network Management Framework},
+  howpublished = {RFC 1908 (Draft Standard)},
+  month = {1},
+  year = {1996},
+  institution = {Internet Engineering Task Force},
+  number = {1908},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Case1993,
+  author = {Case, J. and McCloghrie, K. and Rose, M. and Waldbusser, S.},
+  title = {Coexistence between version 1 and version 2 of the Internet-standard
+	Network Management Framework},
+  howpublished = {RFC 1452 (Proposed Standard)},
+  month = {4},
+  year = {1993},
+  institution = {Internet Engineering Task Force},
+  number = {1452},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Case2002,
+  author = {Case, J. and Mundy, R. and Partain, D. and Stewart, B.},
+  title = {Introduction and Applicability Statements for Internet Standard Management
+	Framework},
+  howpublished = {RFC 3410 (Informational)},
+  month = {12},
+  year = {2002},
+  institution = {Internet Engineering Task Force},
+  number = {3410},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Case1999,
+  author = {Case, J. and Mundy, R. and Partain, D. and Stewart, B.},
+  title = {Introduction to Version 3 of the Internet-standard Network Management
+	Framework},
+  howpublished = {RFC 2570 (Informational)},
+  month = {4},
+  year = {1999},
+  institution = {Internet Engineering Task Force},
+  number = {2570},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Chisholm2004,
+  author = {Chisholm, S. and Romascanu, D.},
+  title = {Alarm Management Information Base (MIB)},
+  howpublished = {RFC 3877 (Proposed Standard)},
+  month = {9},
+  year = {2004},
+  institution = {Internet Engineering Task Force},
+  number = {3877},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@BOOK{Cios2010,
+  title = {Data Mining: A Knowledge Discovery Approach},
+  publisher = {Springer Publishing Company, Incorporated},
+  year = {2010},
+  author = {Cios, K. and Pedrycz, W. and Swiniarski, R. and Kurgan, L.},
+  edition = {1},
+  isbn = { 978-1-44194-120-6}
+}
+
+@INCOLLECTION{Cios2005,
+  author = {Cios, K. J. and Kurgan, L..},
+  title = {Trends in Data Mining and Knowledge Discovery},
+  booktitle = {Advanced Techniques in Knowledge Discovery and Data Mining},
+  publisher = {Springer London},
+  year = {2005},
+  editor = {Pal, N. and Jain, L.},
+  series = {Advanced Information and Knowledge Processing},
+  pages = {1-26},
+  isbn = {978-1-84628-183-9}
+}
+
+@MISC{Claise2004,
+  author = {Claise, B.},
+  title = {Cisco Systems NetFlow Services Export Version 9},
+  howpublished = {RFC 3954 (Informational)},
+  month = {10},
+  year = {2004},
+  institution = {Internet Engineering Task Force},
+  number = {3954},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@BOOK{Cue1989,
+  title = {Estadística},
+  year = {1989},
+  author = {Cué, J.L and Castell, E.},
+  isbn = {0204-89},
+  owner = {ana},
+  timestamp = {2012.05.20}
+}
+
+@INPROCEEDINGS{Ester1996,
+  author = {Ester, M. and Kriegel, H. P. and Sander, J. and Xu, X.},
+  title = {A density-based algorithm for discovering clusters in large spatial
+	databases},
+  booktitle = {Proc. of 2nd ACM SIGKDD Int. Conf. Knowledge Discovery and Data Mining},
+  year = {1996},
+  series = {KDD '96},
+  pages = {226--231},
+  address = {Portland, OR, USA},
+  publisher = {ACM}
+}
+
+@MASTERSTHESIS{Exposito2003,
+  author = {Expósito, F. and Marrero, A.},
+  title = {Plataforma de servicios para el desarrollo de aplicaciones de gestión
+	de red en la UH},
+  school = {Facultad de Matemática y Computación, Universidad de La Habana},
+  year = {2003},
+  type = {Trabajo de Diploma},
+  address = {Habana, Cuba},
+  month = {7},
+  owner = {ana},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Fenner2005,
+  author = {Fenner, B. and Flick, J.},
+  title = {Management Information Base for the User Datagram Protocol (UDP)},
+  howpublished = {RFC 4113 (Proposed Standard)},
+  month = {6},
+  year = {2005},
+  institution = {Internet Engineering Task Force},
+  number = {4113},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Fielding1999,
+  author = {Fielding, R. and Gettys, J. and Mogul, J. and Frystyk, H. and Masinter,
+	L. and Leach, P. and Berners-Lee, T.},
+  title = {Hypertext Transfer Protocol -- HTTP/1.1},
+  howpublished = {RFC 2616 (Draft Standard)},
+  month = {6},
+  year = {1999},
+  institution = {Internet Engineering Task Force},
+  number = {2616},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@ARTICLE{Fisher1996,
+  author = {Fisher, Doug},
+  title = {Iterative optimization and simplification of hierarchical clusterings},
+  journal = {J. Artif. Int. Res.},
+  year = {1996},
+  volume = {4},
+  pages = {147--179},
+  number = {1},
+  month = {4},
+  address = {USA},
+  issn = {1076-9757},
+  numpages = {33},
+  publisher = {AI Access Foundation}
+}
+
+@MISC{Frye2003,
+  author = {Frye, R. and Levi, D. and Routhier, S. and Wijnen, B.},
+  title = {Coexistence between Version 1, Version 2, and Version 3 of the Internet-standard
+	Network Management Framework},
+  howpublished = {RFC 3584 (Best Current Practice)},
+  month = {8},
+  year = {2003},
+  institution = {Internet Engineering Task Force},
+  number = {3584},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@INCOLLECTION{Gan2005,
+  author = {Gan, Guojun and Yang, Zijiang and Wu, Jianhong},
+  title = {A Genetic \&lt;i\&gt;k\&lt;/i\&gt;-Modes Algorithm for Clustering
+	Categorical Data},
+  booktitle = {Advanced Data Mining and Applications},
+  publisher = {Springer Berlin / Heidelberg},
+  year = {2005},
+  editor = {Li, Xue and Wang, Shuliang and Dong, Zhao},
+  volume = {3584},
+  series = {Lecture Notes in Computer Science},
+  pages = {728-728},
+  isbn = {978-3-540-27894-8}
+}
+
+@MASTERSTHESIS{Garma2007,
+  author = {Garma, M. and Ramos, A.},
+  title = {jash : Sistema para la gestión del tráfico en redes de computadoras.},
+  school = {Facultad de Matemática y Computación, Universidad de La Habana.},
+  year = {2007},
+  type = {Trabajo de Diploma.},
+  address = {Habana, Cuba},
+  month = {7},
+  owner = {ana},
+  timestamp = {2012.03.30}
+}
+
+@BOOK{Goldberg1989,
+  title = {Genetic Algorithms in Search, Optimization and Machine Learning},
+  publisher = {Addison-Wesley Longman Publishing Co., Inc.},
+  year = {1989},
+  author = {Goldberg, D. E.},
+  address = {Boston, MA, USA},
+  edition = {1},
+  isbn = {0-20115-767-5}
+}
+
+@MASTERSTHESIS{Gonzalez2008,
+  author = {González , I.},
+  title = {Detección de anomalías en una red a partir de las trazas de ejecución
+	de los servicios},
+  school = {Facultad de Matemática y Computación, Universidad de La Habana.},
+  year = {2008},
+  type = {Trabajo de Diploma.},
+  address = {Habana, Cuba},
+  month = {6}
+}
+
+@INPROCEEDINGS{Guha1998,
+  author = {Guha, Sudipto and Rastogi, Rajeev and Shim, Kyuseok},
+  title = {CURE: an efficient clustering algorithm for large databases},
+  booktitle = {Proceedings of the 1998 ACM SIGMOD international conference on Management
+	of data},
+  year = {1998},
+  series = {SIGMOD '98},
+  pages = {73--84},
+  address = {New York, NY, USA},
+  publisher = {ACM},
+  isbn = {0-89791-995-5},
+  location = {Seattle, Washington, United States},
+  numpages = {12}
+}
+
+@ARTICLE{Hamilton1993,
+  author = {Hamilton, G. and Kougiouris, P.},
+  title = {The Spring nucleus: A microkernel for objects.},
+  journal = {Sun Microsystems Laboratories Inc.},
+  year = {1993},
+  owner = {ana},
+  timestamp = {2012.02.23}
+}
+
+@MISC{Hardaker2011,
+  author = {Hardaker, W.},
+  title = {Transport Layer Security (TLS) Transport Model for the Simple Network
+	Management Protocol (SNMP)},
+  howpublished = {RFC 6353 (Draft Standard)},
+  month = {7},
+  year = {2011},
+  institution = {Internet Engineering Task Force},
+  number = {6353},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Harrington2009a,
+  author = {Harrington, D. and Hardaker, W.},
+  title = {Transport Security Model for the Simple Network Management Protocol
+	(SNMP)},
+  howpublished = {RFC 5591 (Draft Standard)},
+  month = {6},
+  year = {2009},
+  institution = {Internet Engineering Task Force},
+  number = {5591},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Harrington2002,
+  author = {Harrington, D. and Presuhn, R. and Wijnen, B.},
+  title = {An Architecture for Describing Simple Network Management Protocol
+	(SNMP) Management Frameworks},
+  howpublished = {RFC 3411 (Standard)},
+  month = {12},
+  year = {2002},
+  institution = {Internet Engineering Task Force},
+  number = {3411},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Harrington2009b,
+  author = {Harrington, D. and Salowey, J. and Hardaker, W.},
+  title = {Secure Shell Transport Model for the Simple Network Management Protocol
+	(SNMP)},
+  howpublished = {RFC 5592 (Proposed Standard)},
+  month = {6},
+  year = {2009},
+  institution = {Internet Engineering Task Force},
+  number = {5592},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Harrington2009,
+  author = {Harrington, D. and Schoenwaelder, J.},
+  title = {Transport Subsystem for the Simple Network Management Protocol (SNMP)},
+  howpublished = {RFC 5590 (Draft Standard)},
+  month = {6},
+  year = {2009},
+  institution = {Internet Engineering Task Force},
+  number = {5590},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@INCOLLECTION{Hipp2002,
+  author = {Hipp, J and Güntzer, U and Nakhaeizadeh, G},
+  title = {Data Mining of Association Rules and the Process of Knowledge Discovery
+	in Databases},
+  booktitle = {Advances in Data Mining},
+  publisher = {Springer Berlin / Heidelberg},
+  year = {2002},
+  editor = {Perner, Petra},
+  volume = {2394},
+  series = {Lecture Notes in Computer Science},
+  pages = {207-226},
+  isbn = {978-3-540-44116-8}
+}
+
+@ARTICLE{Hood1997,
+  author = {Hood, C. S. and Ji, C.},
+  title = {Proactive Network-Fault Detection},
+  journal = {Reliability, IEEE Transactions on},
+  year = {1997},
+  volume = {46},
+  pages = {333--341},
+  number = {3},
+  month = {9},
+  address = {USA},
+  issn = {0018-9529},
+  numpages = {33},
+  publisher = {IEEE}
+}
+
+@ARTICLE{Huang1998,
+  author = {Huang, Z.},
+  title = {Extensions to the k-Means Algorithm for Clustering Large Data Sets
+	with Categorical Values.},
+  journal = {Data Mining and Knowledge Discovery},
+  year = {1998},
+  volume = {2},
+  pages = {83-304}
+}
+
+@BOOK{Kamber2006,
+  title = {Data Mining: Concepts and Techniques},
+  publisher = {Morgan Kaufmann},
+  year = {2006},
+  author = {Kamber, M. and Han, J.}
+}
+
+@ARTICLE{Karypis1999,
+  author = {Karypis, G. and Han, E.H. and Kumar, V.},
+  title = {CHAMELEON: A Hierarchical Clustering Algorithm Using Dynamic Modeling},
+  journal = {IEEE Computer Magazine},
+  year = {1999},
+  volume = {32(8)},
+  pages = {68--75}
+}
+
+@BOOK{Kaufman1990,
+  title = {Finding Groups in Data: An Introduction to Cluster Analysis},
+  publisher = {John Wiley and sons},
+  year = {1990},
+  author = {Kaufman, L. and Rousseeuw, P.J},
+  owner = {gnuaha7},
+  timestamp = {2011.01.11}
+}
+
+@BOOK{Kohonen1997,
+  title = {Self-Organizing Maps},
+  publisher = {Springer Berlin / Heidelberg},
+  year = {1997},
+  author = {Kohonen, T.},
+  edition = {2},
+  owner = {gnuaha7},
+  timestamp = {2011.01.13}
+}
+
+@BOOK{Kohonen1995,
+  title = {Self-Organizing Maps},
+  publisher = {Springer Berlin / Heidelberg},
+  year = {1995},
+  author = {Kohonen, T.},
+  owner = {gnuaha7},
+  timestamp = {2011.01.13}
+}
+
+@ARTICLE{Lakhina2004,
+  author = {Lakhina, A. and Crovella, M. and Diot, C.},
+  title = {Diagnosing Network-Wide Traffic Anomalies},
+  year = {2004},
+  month = {2},
+  owner = {ana},
+  timestamp = {2012.02.23}
+}
+
+@ARTICLE{Lakhina2004a,
+  author = {Lakhina, A. and Crovella, M. and Diot, C.},
+  title = {Characterization of Network-Wide Anomalies in Traffic Flows},
+  year = {2004},
+  month = {10},
+  owner = {ana},
+  timestamp = {2012.04.01}
+}
+
+@MISC{Levi2002,
+  author = {Levi, D. and Meyer, P. and Stewart, B.},
+  title = {Simple Network Management Protocol (SNMP) Applications},
+  howpublished = {RFC 3413 (Standard)},
+  month = {12},
+  year = {2002},
+  institution = {Internet Engineering Task Force},
+  number = {3413},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@INPROCEEDINGS{MacQueen1967,
+  author = {MacQueen, J. B.},
+  title = {Some Methods for classification and Analysis of Multivariate Observations},
+  booktitle = {Proc. 5th Berkley Symposium on Mathematical Statics and Probability},
+  year = {1967},
+  volume = {1},
+  publisher = {University of California Press},
+  owner = {gnuaha7},
+  timestamp = {2011.01.11}
+}
+
+@BOOK{Manning2008,
+  title = {Introduction to Information Retrieval},
+  publisher = {Cambridge University Press},
+  year = {2008},
+  author = {Manning, C.D. and Raghavan, P. and Schutze, H.}
+}
+
+@MISC{McCloghrie2000,
+  author = {McCloghrie, K. and Kastenholz, F.},
+  title = {The Interfaces Group MIB},
+  howpublished = {RFC 2863 (Draft Standard)},
+  month = {6},
+  year = {2000},
+  institution = {Internet Engineering Task Force},
+  number = {2863},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{McCloghrie1999,
+  author = {McCloghrie, K and Perkins, D. and Schoenwaelder, J.},
+  title = {Structure of Management Information Version 2 (SMIv2)},
+  howpublished = {RFC 2578 (Standard)},
+  month = {4},
+  year = {1999},
+  institution = {Internet Engineering Task Force},
+  number = {2578},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{McCloghrie1991,
+  author = {McCloghrie, K. and Rose, M.},
+  title = {Management Information Base for Network Management of TCP/IP-based
+	internets: MIB-II},
+  howpublished = {RFC 1213 (Standard)},
+  month = {3},
+  year = {1991},
+  institution = {Internet Engineering Task Force},
+  number = {1213},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{McCloghrie1990,
+  author = {McCloghrie, K. and Rose, M.},
+  title = {Management Information Base for Network Management of TCP/IP-based
+	internets},
+  howpublished = {RFC 1156 (Historic)},
+  month = {5},
+  year = {1990},
+  institution = {Internet Engineering Task Force},
+  number = {1156},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@ARTICLE{Mitchell1994,
+  author = {Mitchell, J. G.and Gibbons, J. J. and Hamilton, G. and Kessler, P.
+	B. and Khalidi, Y. A. and Kougiouris, P. and Madany, P. W. and Nelson,
+	M. N. and Powell, M. L. and Radia, S. R.},
+  title = {An Overview of the Spring System},
+  journal = {Sun Microsystems Inc.},
+  year = {1994},
+  owner = {ana},
+  timestamp = {2012.02.23}
+}
+
+@BOOK{Mitchell1997MachineLearning,
+  title = {Machine Learning},
+  publisher = {McGraw-Hill},
+  year = {1997},
+  author = {Mitchell, T.M.}
+}
+
+@MISC{Narayan2009,
+  author = {Narayan, K. and Nelson, D.},
+  title = {Remote Authentication Dial-In User Service (RADIUS) Usage for Simple
+	Network Management Protocol (SNMP) Transport Models},
+  howpublished = {RFC 5608 (Proposed Standard)},
+  month = {8},
+  year = {2009},
+  institution = {Internet Engineering Task Force},
+  number = {5608},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Presuhn2002,
+  author = {Presuhn, R.},
+  title = {Version 2 of the Protocol Operations for the Simple Network Management
+	Protocol (SNMP)},
+  howpublished = {RFC 3416 (Standard)},
+  month = {12},
+  year = {2002},
+  institution = {Internet Engineering Task Force},
+  number = {3416},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Presuhn2002a,
+  author = {Presuhn, R.},
+  title = {Transport Mappings for the Simple Network Management Protocol (SNMP)},
+  howpublished = {RFC 3417 (Standard)},
+  month = {12},
+  year = {2002},
+  institution = {Internet Engineering Task Force},
+  number = {3417},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Presuhn2002b,
+  author = {Presuhn, R.},
+  title = {Management Information Base (MIB) for the Simple Network Management
+	Protocol (SNMP)},
+  howpublished = {RFC 3418 (Standard)},
+  month = {12},
+  year = {2002},
+  institution = {Internet Engineering Task Force},
+  number = {3418},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@ARTICLE{Prunoiu,
+  author = {Prunoiu, F.},
+  title = {MRTG Implementation Manual},
+  journal = {Enterastream Communications Inc.},
+  owner = {ana},
+  timestamp = {2012.04.05}
+}
+
+@MISC{Rajahalme2004,
+  author = {Quittek, J. and Zseby, T. and Claise, B. and Zander, S.},
+  title = {Requirements for IP Flow Information Export (IPFIX)},
+  howpublished = {RFC 3917 (Informational)},
+  month = {10},
+  year = {2004},
+  institution = {Internet Engineering Task Force},
+  number = {3917},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.05.21}
+}
+
+@MISC{Raghunarayan2005,
+  author = {Raghunarayan, R.},
+  title = {Management Information Base for the Transmission Control Protocol
+	(TCP)},
+  howpublished = {RFC 4022 (Proposed Standard)},
+  month = {3},
+  year = {2005},
+  institution = {Internet Engineering Task Force},
+  number = {4022},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Rajahalme2004,
+  author = {Rajahalme, J. and Conta, A. and Carpenter, B. and Deering, S.},
+  title = {IPv6 Flow Label Specification},
+  howpublished = {RFC 3697 (Proposed Standard)},
+  month = {3},
+  year = {2004},
+  institution = {Internet Engineering Task Force},
+  number = {3697},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.05.21}
+}
+
+@ARTICLE{Rand1971,
+  author = {Rand, W. M.},
+  title = {Objective criteria for the evaluation of clustering methods},
+  journal = {Journal of the American Statistical Association},
+  year = {1971},
+  volume = {66},
+  pages = {846-850},
+  owner = {gnuaha7},
+  timestamp = {2011.01.12}
+}
+
+@BOOK{Romesburg1984,
+  title = {Cluster Analysis for Researchers},
+  publisher = {Lifetime Learning Publications},
+  year = {1984},
+  editor = {Sargent, K},
+  author = {Romesburg, H. C.},
+  owner = {gnuaha7},
+  timestamp = {2011.01.11}
+}
+
+@MISC{Rose1990,
+  author = {Rose , M. and McCloghrie, K.},
+  title = {Structure and Identification of Management Information for TCP/IP-based
+	Internets},
+  howpublished = {RFC 1155 (Standard)},
+  month = {5},
+  year = {1990},
+  institution = {Internet Engineering Task Force},
+  number = {1155},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Routhier2006,
+  author = {Routhier, S.},
+  title = {Management Information Base for the Internet Protocol (IP)},
+  howpublished = {RFC 4293 (Proposed Standard)},
+  month = {4},
+  year = {2006},
+  institution = {Internet Engineering Task Force},
+  number = {4293},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@BOOK{Saydam1996,
+  title = {From Networks and Network Management into Service and Service Management},
+  year = {1996},
+  author = {Saydam, T. and Magedanz, T.},
+  pages = {345-348},
+  month = {12},
+  owner = {ana},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Schoenwaelder2008,
+  author = {Schoenwaelder, J.},
+  title = {Simple Network Management Protocol (SNMP) Context EngineID Discovery},
+  howpublished = {RFC 5343 (Draft Standard)},
+  month = {9},
+  year = {2008},
+  institution = {Internet Engineering Task Force},
+  number = {5343},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Schoenwaelder2002,
+  author = {Schoenwaelder, J.},
+  title = {Simple Network Management Protocol (SNMP) over Transmission Control
+	Protocol (TCP) Transport Mapping},
+  howpublished = {RFC 3430 (Experimental)},
+  month = {12},
+  year = {2002},
+  institution = {Internet Engineering Task Force},
+  number = {3430},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MASTERSTHESIS{Silveira2010,
+  author = {Silveira, F. J.},
+  title = {Unsupervised Diagnosis of Network Traffic Anomalies},
+  school = {Pierre et Marie Curie},
+  year = {2010},
+  type = {Thèse de Doctorat.},
+  address = {Paris, Francia},
+  month = {5},
+  owner = {ana},
+  timestamp = {2012.02.23}
+}
+
+@BOOK{Snir1996,
+  title = {MPI: The Complete Reference},
+  publisher = {Massachusetts Institute of Technology},
+  year = {1996},
+  author = {Snir, M. and Otto, S. and Huss-Lederman, S. and Walker, D. and Dongarra,
+	J.},
+  owner = {ana},
+  timestamp = {2012.04.05}
+}
+
+@BOOK{Tanenbaum2007,
+  title = {Distributed Systems. Principles and Paradigms.},
+  publisher = {Prentice Hall},
+  year = {2007},
+  author = {Tanenbaum, A. S. and Van Steen, M.},
+  edition = {2},
+  owner = {ana},
+  timestamp = {2012.02.23}
+}
+
+@ARTICLE{Thottan1998,
+  author = {Thottan, M. and Ji, C.},
+  title = {Proactive Anomaly Detection using Distributed Intelligent Agents},
+  year = {1998},
+  owner = {ana},
+  timestamp = {2012.02.23}
+}
+
+@MISC{Waldbusser2000,
+  author = {Waldbusser, S.},
+  title = {Remote Network Monitoring Management Information Base},
+  howpublished = {RFC 2819 (Standard)},
+  month = {5},
+  year = {2000},
+  institution = {Internet Engineering Task Force},
+  number = {2819},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Waldbusser1997,
+  author = {Waldbusser, S.},
+  title = {Remote Network Monitoring Management Information Base Version 2 using
+	SMIv2},
+  howpublished = {RFC 2021 (Proposed Standard)},
+  month = {1},
+  year = {1997},
+  institution = {Internet Engineering Task Force},
+  number = {2021},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@MISC{Waldbusser2003,
+  author = {Waldbusser, S. and Cole, R. and Kalbfleisch, C. and Romascanu, D.},
+  title = {Introduction to the Remote Monitoring (RMON) Family of MIB Modules},
+  howpublished = {RFC 3577 (Informational)},
+  month = {8},
+  year = {2003},
+  institution = {Internet Engineering Task Force},
+  number = {3577},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@ARTICLE{Ward1963,
+  author = {Ward, J.},
+  title = {Hierarchical Grouping to Optimize an Objective Function.},
+  journal = {Journal of the American Statistical Association.},
+  year = {1963},
+  volume = {58},
+  pages = {236-244},
+  owner = {gnuaha7},
+  timestamp = {2011.01.11}
+}
+
+@MISC{Waterman1999,
+  author = {Waterman, R. and Lahaye, B. and Romascanu, D. and Waldbusser, S.},
+  title = {Remote Network Monitoring MIB Extensions for Switched Networks Version
+	1.0},
+  howpublished = {RFC 2613 (Draft Standard)},
+  month = {6},
+  year = {1999},
+  institution = {Internet Engineering Task Force},
+  number = {2613},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@BOOK{Wessels2004,
+  title = {Squid: The Definitive Guide},
+  publisher = {O'Really Media Inc.},
+  year = {2004},
+  author = {Wessels, D.},
+  month = {1},
+  isbn = { 0-596-00162-2},
+  owner = {ana},
+  timestamp = {2012.04.05}
+}
+
+@MISC{Wijnen2002,
+  author = {Wijnen, B. and Presuhn, R. and McCloghrie, K.},
+  title = {View-based Access Control Model (VACM) for the Simple Network Management
+	Protocol (SNMP)},
+  howpublished = {RFC 3415 (Standard)},
+  month = {12},
+  year = {2002},
+  institution = {Internet Engineering Task Force},
+  number = {3415},
+  organization = {Network Working Group},
+  owner = {ana},
+  publisher = {IETF},
+  series = {Request for Comments},
+  timestamp = {2012.03.30}
+}
+
+@INPROCEEDINGS{Wirth2000,
+  author = {Wirth, R. and Hipp, J.},
+  title = {CRISP-DM: Towards a standard process model for data mining},
+  booktitle = {Proceedings of the Fourth International Conference on the Practical
+	Application of Knowledge Discovery and Data Mining},
+  year = {2000},
+  pages = {29--39}
+}
+
+@INPROCEEDINGS{Zhang1996,
+  author = {Zhang, T. and Ramakrishnan, R. and Linvy M.},
+  title = {Birch: an efficient data clustering method for large databases},
+  booktitle = {Proc. of 1996 ACM-SIGMOD Int. Conf. on Management of Data},
+  year = {1996},
+  series = {SIGMOD '96},
+  pages = {103--114},
+  address = {Montreal, QC, Canada},
+  publisher = {ACM}
+}
+
+@comment{jabref-meta: selector_publisher:}
+
+@comment{jabref-meta: selector_author:}
+
+@comment{jabref-meta: selector_journal:}
+
+@comment{jabref-meta: selector_keywords:}
+

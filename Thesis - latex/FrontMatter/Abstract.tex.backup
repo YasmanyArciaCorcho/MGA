@@ -1,0 +1,32 @@
+\begin{abstract}
+
+Twitter es hoy una de de las redes sociales con mayor importancia en Internet.
+La dinámica del funcionamiento de esta red social ha introducido en la red un
+nuevo modelo de comunicación conocido como microblogging. Esta nueva forma de 
+interacción se ha impuesto rápidamente haciendo de Twitter una plataforma de
+comunicación protagonista en la difusión y coordinación de muchos eventos que 
+ocurren en la actualidad.
+
+Este protagonismo ha hecho de Twitter un contexto propicio para realizar estudios
+sobre la influencia que pueden establecer los usuarios en los espacios digitales.
+Sobre esta temática se han desarrollado un conjunto de aplicaciones que permiten
+establecer una medida cuantitativa de la influencia de los usuarios. Así cada 
+aplicación establece su propia medida sin que exista consenso sobre cómo determinar
+correctamente la misma.
+
+En este trabajo se presenta una nueva alternativa a la estimación de la influencia
+de un usuario de Twitter. Evitando el compromiso de establecer una medida para cuantificar
+la influencia de un usuario, se propuso en esta alternativa la identificación de grupos 
+jerárquicos de influencia clasificando a los usuarios de acuerdo a la 
+pertenencia de estos a un grupo determinado. Esta identificación de los grupos de 
+influencia está basada en la aplicación de técnicas de agrupamiento.
+
+Con este fin entonces se identificó y analizó un conjunto de variables asociadas a los usuarios 
+y propias de la dinámica de Twitter que permiten caracterizar la influencia de los usuarios
+en esta red. Igualmente con el fin de corroborar la alternativa que se propone
+se realizaron un conjunto de experimentos que permitieron establecer la validez de la propuesta.
+Finalmente, a modo de prueba de concepto, se presentan el diseño y detalles de implementación de una 
+aplicación que lleva a la práctica la propuesta de clasificar los usuarios en un número determinado
+de niveles de influencia.
+
+\end{abstract}

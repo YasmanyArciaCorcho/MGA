@@ -1,0 +1,119 @@
+\chapter{GAGM Avanzada}
+\label{chap:GAGMA}
+
+\agregaesto{PON ESTO EN OTRO FICHERO}
+
+Los macros \texttt{defnode} y \texttt{gcode} utilizan la información almacenada en los parámetros de los llamados a dichos macros, para definir las clases, funciones constructoras o realizar la generación de código. Por defecto, si no se especifican las opciones de los slots, las palabras claves, el Lambda List y el cuerpo de las funciones constructoras y de los métodos; esta información será rellenada automáticamente. Debido a que los usuarios pueden necesitar distintas funcionalidades en su dominio, en la próxima sección se presentan otras funcionalidades del macro \texttt{defnode} que permiten modificar el código generado por él. \agregaesto{SI TAMBIÉN VAS A HABLAR DE GCODE, DILO AQUÍ.}
+
+\section{Opciones de DefNode}
+\label{defnodeavanzado}
+En la definición de las clases y funciones constructoras existen un conjunto de propiedades que Defnode completa con valores prefijados. A continuación, se presentará una opción para definir los slots de las clases y posteriormente las opciones que permiten modificar el código generado por DefNode. 
+
+
+\agregaesto{NO EMPIECES CON EL LAMBDA LIST DEL DEFNODE NI DE NADA. EXPLICA CON PALABRAS LO QUE QUIERES HACER.}. Lambda List del Defnode:  
+\begin{verbatim}
+   (Nombre-de-la-clase (lista-de-herencia) (definición-de-slots) 
+                       (parámetros-opcionales))
+\end{verbatim}
+
+\agregaesto{EL NOMBRE DE LA CLASE Y LA LISTA DE HERENCIA SON IGUALES A LO QUE SE HACE CON EL DEFCLASS, pero en la definición de slots y parámetros opcionales hay cambios. en las siguientes secciones se muestran estos cambios.}
+
+\agregaesto{Vaselina a lo que sigue.}
+
+\subsection{Slots}
+Cada elemento de la lista definición-de-slots hace referencia a la declaración de un slot en la definición de la clase Nombre-de-la-clase, y puede ser un símbolo o una lista. Si dicho elemento es un símbolo, la macro expansión de DefNode rellena las opciones ACCESSOR e INITARG con el mismo nombre del slot; si es una lista, se deben definir las opciones de slots que se deseen y sus respectivos valores.  
+
+En el siguiente ejemplo se muestra la definición de una clase con tres slots. 
+\begin{verbatim}
+        (DefNode collection-definition-node () 
+	  	      (collection-name
+               collection-type 
+	  	       (collection-capacity 
+	  	                          :initarg :capacity 
+	  	                          :initform 100))
+              ())
+\end{verbatim}
+
+Los dos primeros serán rellenados con los valores por defecto, pero en el caso del tercero, como se definen dos propiedades el initarg y el initform, esas se agregan a su definición, como se puede apreciar en la macroexpansión del código anterior:
+
+Donde un fragmento de su macro expansión es:
+\begin{verbatim}
+	     (defclass collection-definition-node () 
+	          ((collection-name 
+	                 :accessor  collection-name
+	                 :initarg  :collection-name 
+	                 :allocation instance 
+	                 :initform nil 
+	                 :documentation “emtpy”)
+	           (collection-type 
+	                 :accessor  collection-type
+	                 :initarg  :collection-type 
+	                 :allocation instance 
+	                 :initform nil 
+	                 :documentation “emtpy”)
+	            (collection-capacity 
+	                 :accessor collection-capacity
+	                 :initarg: capacity
+                     :allocation instance
+	                 :initform 100
+	                 :documentation “empty”))
+\end{verbatim}
+
+DefNode emplea un conjunto de palabras claves para agregar o modificar el código que genera su expansión. Ellas son especificadas en el último argumento del Lambda List de dicho macro a través de parámetros nombrados, los cuales se presentan a continuación.
+
+\subsection{Nombre y Tipo de función constructora}
+El nombre para la función constructora de una clase se especifica mediante la palabra clave func-name. Las funciones constructoras pueden ser macros, funciones o métodos. A través de la palabra clave ctr-type se especifica el tipo de constructor (defmacro, defun, defmethod).
+Ejemplo:
+\begin{verbatim}
+	(DefNode collection-insert-node () (name value) 
+	(:ctr-type funtion :func-name collection-insert))
+\end{verbatim}
+
+\subsection{Lambda List de la función constructora}
+Por defecto, el Lambda List de las funciones constructoras está formado por los nombres de las opciones Initarg de los slots de la clase a instanciar. Ellos se encuentran ordenados como fueron declarados en su definición.\\ 
+Ejemplo:
+\begin{verbatim}
+	(defnode collection-insert-node () 
+	  (collection-name collection-name 
+	       (element :initarg :element :initform nil))
+	  (:func-name collection-insert)))
+\end{verbatim}
+Un fragmento de su macro expansión es:
+\begin{verbatim}
+(defun collection-insert (collection-name  element))
+\end{verbatim}
+La palabra clave lambda-list permite definir el Lambda List de la función constructora. En este caso, el generado por DefNode se sustituye por la nueva especificación de los parámetros.\\ 
+Ejemplo:\\
+Si se desea que la clase collection-insert-node reciba un número arbitrario de argumentos, se define su Lambda List como se muestra a continuación.
+\begin{verbatim}
+(defnode collection-insert-node () (reference-collection value) 
+                                   (:ctr-type funtion 
+                                    :func-name collection-insert-range 
+                                    :lambda-list (&rest value)))
+\end{verbatim}
+Un fragmento de su macro expansión sería:
+\begin{verbatim}
+(defun collection-insert-range (&rest value))
+\end{verbatim}
+
+Y a partir de esta definición se puede llamar como: \agregaesto{PON UN EJEMPLO DE CÓMO SE LLAMARÍA A LA FUNCIÓN. SERÍA BUENO, UN EJEMPLO DE CÓMO SE PUEDE USAR EL CONSTRUCTOR POR DEFECTO, Y LOS CAMBIOS QUE LE PODEMOS HACER NOSOTROS.}
+
+\subsection{Ctr-body}
+
+El cuerpo de la función constructora se puede especificar con la palabra clave ctr-body.
+Ejemplo:
+\begin{verbatim}
+(defnode collection-insert-node ()(reference-collection value)
+								(:ctr-body (make-instance 'collection-insert-node
+								               :reference-collection reference-collection)
+								               :value value))
+\end{verbatim}
+En este caso, el valor de ctr-body puede ser cualquier fragmento de código Lisp válido.
+
+
+%\agregaesto{FINAL DE SECCIÓN}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Thesis"
+%%% End:

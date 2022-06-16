@@ -1,0 +1,406 @@
+\chapter{Antecedentes}
+\label{chap:background_project}
+  En la Universidad de La Habana se brindan un conjunto de servicios de suma
+importancia para el desarrollo científico-investigativo de los miembros de dicha
+institución. Por este motivo, es necesario que sean gestionados, de manera que
+las prestaciones que brinden estén acorde a las necesidades de su uso. 
+
+Actualmente en la UH se cuenta con un conjunto de herramientas de gestión que le
+permiten a los administradores de la red, realizar una detección temprana de
+algunas situaciones anómalas en el comportamiento de la misma. Algunas de estas
+herramientas ofrecen también un diagnóstico sobre la posible causa de la
+anomalía, lo que posibilita que el problema sea solucionado rápidamente. Debido
+a la importancia que tiene el proceso de gestión de los servicios brindados en
+una red, así como el comportamiento en general de la misma, en la UH se decidió
+incursionar en una nueva metodología para la detección de anomalías. 
+
+La metodología diseñada\cite{Gonzalez2008} propuso un modelo capaz de detectar
+anomalías a partir del uso de minería de datos en las trazas de los servicios.
+Estas últimas ofrecen información sobre el comportamiento de estos, siendo
+posible representar su estado en un intervalo de tiempo mediante la información
+asociada a dicho período. Este modelo establece lo que es ``normal'' a lo largo
+del tiempo, desarrollando y actualizando conjuntos de patrones con los que se
+pueden comparar los eventos que se producen en los sistemas. Si uno de esos
+eventos se sale del conjunto de normalidad, automáticamente se cataloga de
+sospechoso. Para crear dichos conjuntos de patrones se utilizaron técnicas de
+detección de \textit{outliers} para limpiar los datos, eliminando todos aquellos
+valores que sólo aportaran ruido. 
+
+El proceso anteriormente descrito, constituía una aplicación de minería de
+datos, por ello para su desarrollo se planteó el seguimiento del modelo CRISP-DM
+(\textit{CRoss Industry Standard Process for Data Mining})\cite{Wirth2000,
+Hipp2002, Cios2005, Cios2010}. Dicho modelo, como se puede observar en la figura
+\ref{fig:datamining}, ofrece una visión general del ciclo de vida de un proyecto
+de minería de datos y está compuesto por las siguientes seis etapas:
+\begin{enumerate}
+ \item Definición del problema
+ \item Definición de los datos
+ \item Fase de preprocesamiento
+ \item Creación del modelo
+ \item Evaluación del modelo
+ \item Aplicación o puesta en práctica
+\end{enumerate}
+
+\begin{figure}[!h]
+ \begin{center} 
+  \includegraphics[scale=.4, keepaspectratio=true]{Graphics/datamining} 
+ \end{center}
+\label{fig:datamining} 
+\caption{Fases del modelo CRISP-DM} 
+\end{figure}
+
+\section{Definición del problema}
+Para la validación de la metodología propuesta\cite{Gonzalez2008} se tomó como
+caso de estudio el servicio de \textit{proxy}
+Squid\footnote{\url{http://www.squid-cache.org/}}, utilizado en la UH como
+intermediario para la navegación por Internet. Este servicio fue seleccionado
+por ser el principal consumidor del ancho de banda de la red universitaria,
+razón por la cual resulta importante contar con una herramienta capaz de
+informar sobre cualquier problema en su funcionamiento. 
+
+Como se planteó anteriormente, la metodología propuesta pretende detectar
+anomalías a partir de las trazas de ejecución de los servicios. Para la gestión
+del servicio de \textit{proxy} Squid es necesario obtener información útil para
+la caracterización de dicho servicio a partir de las trazas que él genera. Para
+ello fue necesario determinar que archivo de trazas sería utilizado, pues este
+servicio genera tres archivos diferentes: \texttt{cache.log}, \texttt{store.log}
+y \texttt{access.log}. En el primero se recopilan datos acerca de las
+operaciones que la aplicación va realizando en su ejecución, \texttt{store.log}
+contiene información acerca de los objetos que entran o abandonan la
+\textit{cache} y el último, permite conocer información acerca de cada solicitud
+realizada al servicio. Debido a los objetivos que se perseguían en dicho
+trabajo, se seleccionó el archivo de trazas \texttt{access.log}.
+
+Para la extracción de información útil para la gestión de dicho servicio, era
+necesario conocer primero que datos contenía el fichero de trazas
+\texttt{access.log} que se genera en la UH y el formato en que es almacenado
+cada elemento. Con este objetivo se realizó un estudio del formato nativo de
+Squid, utilizado en la UH, el cual contiene los siguientes campos:
+
+\begin{center}
+\scriptsize\ttfamily time duration client action/code bytes method url rfc931 
+peerstatus/peerhost type
+\end{center}
+
+La descripción de estos campos sigue a continuación\cite{Wessels2004}: 
+\begin{enumerate}
+ \item \verb+time+: Es la fecha en la que el servidor está en condiciones de
+  darle una respuesta al cliente sobre el pedido asociado a esta entrada. Este
+  tiempo es expresado como la cantidad de milisegundos transcurridos desde el 
+  1ro. de enero de 1970.
+ \item \verb+duration+: Es el tiempo transcurrido desde que el cliente realiza
+  la solicitud hasta el momento en que el servidor devuelve el recurso pedido.
+ \item \verb+client address+: Es la dirección IP (\textit{Internet Protocol})
+  del equipo que el cliente utiliza para realizar la solicitud.
+ \item \verb+action+: Describe cómo fue tratada la solicitud localmente. Por
+  ejemplo, si este campo tiene como valor \texttt{HIT}, significa que el recurso
+  que se solicitó fue encontrado en el \textit{cache} y por lo tanto no fue
+  necesario pedirlo a Internet. Asimismo, el valor \texttt{MISS} quiere decir 
+  que el recurso no fue encontrado en \textit{cache}. Otros posibles valores se 
+  pueden consultar en la página Web de las preguntas más frecuentes del servidor
+  Squid~\footnote{\url{http://wiki.squid-cache.org/SquidFaq}}.
+ \item \verb+code+: Es el código de respuesta HTTP (\textit{HiperText Transfer
+  Protocol}) correspondiente a esta solicitud. En la especificación del estándar
+  HTTP~\cite{Fielding1999} se definen los posibles valores para este campo.
+ \item \verb+bytes+: Es la cantidad de datos en bytes de la respuesta entregada
+  al cliente.
+ \item \verb+request method+: Expresa el método HTTP que fue empleado para
+  obtener la respuesta a la solicitud. Los valores más frecuentes son 
+  \texttt{GET} y \texttt{POST}. En el estándar del protocolo HTTP se puede 
+  encontrar el resto de los valores para este campo.~\cite{Fielding1999}.
+ \item \verb+url+: Se refiere a la URL (\textit{Uniform Resource Locator})
+  solicitada.
+ \item \verb+rfc931+: Contiene información acerca de la identidad del cliente 
+  si la solicitud fue autenticada. En caso contrario contiene el símbolo 
+  \texttt{-}.
+ \item \verb+peerstatus+: Con este campo se describe cómo y dónde fue 
+  encontrada la respuesta a la solicitud.
+ \item \verb+peerhost+: Es el nombre de la máquina donde fue encontrado el
+  recurso aunque esto puede variar dependiendo de la versión de Squid que se 
+  esté utilizando.
+ \item \verb+content type+: Es el tipo de contenido del objeto solicitado, tal 
+  y como aparece en la cabecera HTTP de la respuesta.
+\end{enumerate}
+
+Una vez conocidos los datos ofrecidos en el fichero de trazas
+\texttt{access.log}, con el objetivo de enriquecer la información que se puede
+extraer de estas para la gestión de este servicio; se formuló el siguiente
+problema de minería de datos:
+
+  Analizar las trazas de acceso del servicio \textit{proxy} Squid con el
+  objetivo de:
+  \begin{itemize}
+    \item Identificar variables con un comportamiento estable en el tiempo. Es
+     decir que fluctúen dentro de determinados parámetros acotables para 
+     intervalos específicos de tiempo.
+    \item Elaborar para cada una de las variables un perfil de comportamiento
+     sobre la base del análisis de las mismas dentro de un conjunto inicial de
+     archivos de trazas.
+    \item Como vida útil de este conocimiento extraído, examinar nuevos
+     registros de Squid con el objetivo de buscar un valor para dichas variables
+     dentro de estos nuevos ficheros y compararlos con los perfiles definidos 
+     para cada una de ellas.
+  \end{itemize}
+
+\section{Definición de los datos}
+\label{sec:data_definition}
+Para la aplicación de esta fase al problema que se estaba resolviendo, se
+identificó en una primera instancia un conjunto de variables o atributos a
+partir de toda la información que se brinda en las trazas de acceso de Squid.
+Para su elección no se tuvo en cuenta ninguna característica especial, aunque 
+se consideró el hecho de que estas se encontraban muy relacionadas con el
+comportamiento del ancho de banda de Internet que tiene la universidad. Estas
+variables fueron:
+\begin{itemize}
+ \item cantidad total de solicitudes realizadas (\texttt{cs})
+ \item cantidad total de solicitudes que no se encontraron en \textit{cache} 
+  (\texttt{css})
+ \item cantidad total de bytes entregados a los clientes (\texttt{cb})
+ \item cantidad total de bytes bajados directamente de Internet (\texttt{cbs})
+\end{itemize}
+
+Para construir la colección de datos inicial se analizaron las trazas de acceso
+en un intervalo de $150$ días de ejecución del servicio Squid y se agruparon los
+datos en intervalos de $5$ minutos; obteniéndose como resultado un número fijo
+de entradas diarias\footnote{Es decir, que a diferencia de los datos iniciales,
+ahora cada día consta de una cantidad fija de registros (288 en este caso)}. Por
+cada uno de estos intervalos se contabilizaron resúmenes para las cuatro
+variables seleccionadas. Esta información se almacenó en tablas separadas (una
+por cada variable) dentro de una base de datos relacional. Cada una de estas
+tablas contiene solamente tres campos. Estos son: la fecha, el número del
+intervalo y el valor de la variable. Por ejemplo, la tupla \verb+(20120325, 1, 75)+, 
+dentro de la tabla \texttt{cs}, significa que el día 25 de Marzo de 2012,
+entre las 12:00 y 12:05 am (equivalente al primer intervalo del día) se
+realizaron $75$ solicitudes. Nótese, que cada tupla tiene asociado el número del
+intervalo del día al que corresponden sus datos.
+
+\section{Fase de preprocesamiento}
+A partir de la colección de datos construida en la fase anterior se graficó el
+comportamiento de las variables por intervalos para todos los días de la muestra
+analizada. En estas gráficas, se pudo observar que aunque la mayoría de los
+puntos seguían un mismo patrón, varios puntos se alejaban del resto. Observese
+el comportamiento de la variable \texttt{cs} en la figura \ref{fig:cs_monday}
+durante 21 lunes; como se puede apreciar existen puntos que se alejan del patrón
+común. Estos puntos, pueden ser vistos como anomalías u \textit{outliers}, y no
+deben tenerse en cuenta en la construcción del modelo. Para su identificación se
+utilizaron algunas técnicas de detección de \textit{outliers}, obteniéndose
+buenos resultados con el algoritmo \texttt{DBSCAN} (\textit{Density Based
+Spatial Clustering of Applications with Noise })\cite{Ester1996}. Luego, se
+conformó el conjunto de datos final con todos los elementos que no fueron
+clasificados como ruido u \textit{outlier}, para la posterior construcción del
+modelo a partir de este. %TODO: Cambiar figura monday.
+
+\begin{figure}[!h]
+ \begin{center}
+  \includegraphics[scale=.5, keepaspectratio=true]{Graphics/monday}  
+ \end{center}
+ \caption{Cantidad de solicitudes durante 21 lunes.}
+ \label{fig:cs_monday}
+\end{figure}
+
+\section{Creación del modelo}
+En la realización de esta fase se trabaja con el conjunto de datos final
+obtenido a partir del algoritmo \texttt{DBSCAN}. Finalmente, el modelo que
+representaba el comportamiento normal de un servicio estaba dado por umbrales
+(mínimo, máximo) definidos para cada variable en cada intervalo de un día de la
+semana. Esta decisión se tomó basándose en las características de los datos y
+del problema en sí mismo, pues justamente se querían definir ciertas cotas por
+cada intervalo que permitieran establecer la diferencia entre un comportamiento
+normal y una posible anomalía en el servicio.
+
+Para almacenar los perfiles se usaron diferentes tablas (una por cada variable) 
+dentro de una base de datos relacional. Las columnas de estas eran:
+\begin{itemize}
+ \item \texttt{weekday}: día de la semana (lunes = 0, martes = 1, \ldots, 
+  domingo = 6)
+ \item \texttt{interval\_number}: número del intervalo dentro del día de la semana 
+  que se está analizando.
+ \item \texttt{min}: el mínimo valor de los datos
+ \item \texttt{max}: el máximo valor de los datos
+\end{itemize}
+
+\section{Evaluación del modelo}
+Después de creado el modelo surgió la incógnita de si entre las variables
+seleccionadas -dígase \texttt{cs}, \texttt{css}, \texttt{cb} y \texttt{cbs}-
+existía solapamiento de información y por ende se podían establecer conclusiones
+entre ellas. Para ello, se realizó un estudio sobre dichas variables, en el cual
+se graficó la interrelación de las mismas en un período de tiempo y se observó
+que entre cada pareja de variables parecía existir una correlación lineal. Por
+ese motivo se calculó el coeficiente de correlación lineal entre estas para
+comprobar dicha hipótesis. Los resultados se pueden ver en la tabla
+\ref{tab:correlation}. Después de observados los valores de la tabla, se puede
+decir, bajo el criterio de la existencia o no de correlación lineal a partir de
+un valor de $r$, que todas las posibles combinaciones con las variables parecen
+tener una relación lineal positiva. Sin embargo, usualmente se considera que
+existe correlación lineal cuando $r > 0.75$\cite{Cue1989}. Por tanto, bajo este
+criterio solamente se consideraron correlacionadas las parejas $(cs, css)$ y
+$(cb, cbs)$. %TODO: Arreglar referencia Cue1989.
+
+\begin{table}[ht]
+ \begin{center}
+  \begin{tabular}{|c|c|}
+   \hline
+    Variables
+   & $r$
+   \\\hline
+   $(cs, \ \ cb)$
+   & 6.077598e-01 
+   \\\hline
+   $( cs, \ css)$  
+   & 9.922090e-01
+   \\\hline
+   $(cs,\  cbs)$
+   & 5.172269e-01
+   \\\hline
+   $(cb,\ css)$
+   & 6.052734e-01
+   \\\hline
+   $(cb,\  cbs)$
+   & 9.880280e-01
+   \\\hline
+   $( css,  cbs)$
+   & 5.181871e-01
+   \\\hline
+  \end{tabular}
+ \end{center}
+ \caption{Cálculo del coeficiente de correlación}
+ \label{tab:correlation}
+\end{table}
+
+En consecuencia se pensó en comprobar sólo si una de las variables de las
+parejas correlacionadas se ajustaba al perfil asociado a ella, para catalogar de
+inusual el comportamiento de un servicio en un período de tiempo. Pero en el
+problema que se está tratando de resolver sólo se desea informar a los
+administradores de la red cuando se tiene una fuerte sospecha de que ha ocurrido
+una anomalía. En este sentido se decidió clasificar como anomalía a aquellas
+tuplas $(cs, css, cb, cbs)$ donde las cuatro variables queden fuera del perfil
+construido para dicho intervalo de tiempo.
+
+\section{Aplicación o puesta en práctica}
+Para esta fase se desarrolló una aplicación\cite{Gonzalez2008} que permitiera
+validar la metodología propuesta. Esta aplicación tan sólo detecta las anomalías
+correspondientes al servicio \textit{proxy} Squid de la UH, generando reportes
+sobre las anomalías detectadas en el comportamiento del mismo. La misma obtiene
+las trazas del servidor Squid y va formando tuplas con la información acumulada
+por intervalos de $5$ minutos. Luego, estas tuplas son clasificadas en anomalías
+o comportamiento ``normal'' sobre la base de conocer si se ajustan o no al
+perfil modelado. 
+
+Como se mencionó anteriormente esta aplicación debía realizar dos tareas
+principales; la primera era obtener los valores asociados a las variables
+definidas en la sección \ref{sec:data_definition}, a partir de los datos de las
+trazas de ejecución. La segunda era determinar si un nuevo evento constituye o
+no una anomalía a partir del modelo asociado al comportamiento ``normal'' de
+este servicio. De ahí que fueran identificadas dos componentes principales en
+esta aplicación: un \emph{Recolector de datos} y un \emph{Clasificador}. La
+comunicación entre estas componentes se realizó siguiendo el modelo
+cliente-servidor. Finalmente, la arquitectura adoptada quedó como se ilustra en
+la figura \ref{fig:architecture}.
+
+\begin{figure}[ht]
+ \begin{center}
+  \includegraphics[scale=.6, keepaspectratio=true]{Graphics/architecture}
+ \end{center}
+ \caption{Arquitectura de la aplicación.}
+ \label{fig:architecture}
+\end{figure}
+
+El \emph{Recolector de datos} es el encargado de leer los registros que van
+apareciendo en el archivo de trazas de dicho servicio, conformar las tuplas que
+caracterizarán el comportamiento del mismo durante un cierto intervalo de tiempo
+y enviarlas al \emph{Clasificador}. Para los objetivos de esta aplicación una
+tupla era una lista de valores con la siguiente información:
+$$ (\texttt{date, interval\_number, cs\_value, css\_value, cb\_value, cbs\_value})$$
+
+donde \texttt{date} es la fecha de esa tupla, \texttt{interval\_number} se
+refiere al intervalo de esa fecha que se está analizando, y los cuatro campos
+restantes son los valores asociados a las variables que representarán a dicho
+servicio.
+
+Con cada nueva ejecución de este módulo, se lee cada línea que el servicio de
+Squid va escribiendo al final del fichero de trazas \texttt{access.log} y se
+averigua la hora de dicha entrada. A partir de este valor se obtiene  la fecha
+de comienzo del intervalo más cercano y se empiezan a leer los registros de las
+trazas agrupándolos por intervalos de $5$ minutos. Una vez que se tiene
+almacenado el grupo de registros del intervalo, se averigua la fecha, y los
+demás valores de la tupla se obtienen contabilizando resúmenes a partir del
+grupo de registros. Es importante destacar que este módulo debe ejecutarse en el
+mismo servidor donde esté funcionando el servicio de Squid, para evitar el
+retraso en las lecturas por la transferencia a través de la red.
+
+Para instrumentar una lectura continua del archivo de trazas, en la medida en
+que este iba creciendo, se implementó una funcionalidad similar a la del comando
+\texttt{tail}\footnote{\texttt{tail} muestra las últimas líneas de un fichero y
+si se le especifica la opción \texttt{- f} muestra las líneas en la medida en
+que va creciendo} de Linux. 
+
+Una vez obtenida una tupla de valores listos para clasificar se pasa la
+información utilizando XML-RPC\footnote{XML-RPC es un protocolo de llamada a
+procedimiento remoto que usa XML para codificar los datos y HTTP como protocolo
+de transmisión de mensajes. Con él, un cliente puede invocar métodos con
+parámtetros en un servidor remoto y obtener información estructurada como
+respuesta.} al módulo \emph{Clasificador}, el cual debe determinar si esta
+constituye o no una anomalía. Para ello deben obtenerse los perfiles
+establecidos por el modelo construido, para cada variable y verificarse si esta
+tupla se adecua a los patrones de comportamiento ``normal'' establecidos para
+este servicio. Una vez clasificada se almacena esta información en una base de
+datos, para permitir la retroalimentación del modelo en una fase posterior.
+Aunque en esta implementación no se contempló esta tarea dentro de la
+aplicación.
+
+La aplicación propuesta constituye un sistema centralizado, donde si alguna de
+estas componentes deja de funcionar, el sistema completo también lo hará. En
+caso de que el servicio que se está analizando estuviese corriendo en más de un
+servidor, los \emph{recolectores de datos} que se encuentran en estos enviarían
+sus datos al mismo \emph{Clasificador}. Luego, se crearía una sobrecarga en esta
+componente, haciendo su funcionamiento más lento y creando en el
+\emph{Clasificador} del sistema lo que se conoce como ``cuello de
+botella''\footnote{TODO: Significado de cuello de botella}.
+
+\section{Conclusiones}
+La aplicación desarrollada brindó un sistema capaz de detectar anomalías en el
+comportamiento del servicio \textit{proxy} Squid, de la UH, validando así la
+metodología propuesta. Dicha herramienta fue creada con un motivo puramente
+experimental por lo que en su diseño no se concibieron algunos aspectos vitales
+para su uso diario en esta institución. 
+
+Una de estas deficiencias radica en que el modelo no se retroalimenta de los
+cambios que se producen en el comportamiento de este servcio. En consecuencia,
+si el modelo inicial representa el comportamiento de este servicio durante los
+meses de clases cuando se realizan muchas solicitudes, en los meses de
+vacaciones se detectarán muchas anomalías debido a la disminución lógica del
+volumen de peticiones. De igual manera, también serán ignorados los cambios que
+se produzcan de un año a otro en su comportamiento. Ambos hechos producen no
+sólo la clasificación en anomalías de elementos que no se salen del
+comportamiento esperado, sino también la no detección de eventos que si se
+alejan del perfil de normalidad esperado para el mismo. 
+
+Por otro lado, esta aplicación no brinda la posibilidad de incorporar otro
+servicio para ser gestionado por la misma. Aunque sí mostró una metodología
+acertada para el diseño y la instrumentación de una herramienta para la
+detección de anomalías en cualquier servicio de la red. Por este motivo, tomando
+como base las ideas planteadas por la metodología propuesta y la aplicación
+resultante; se pretende implementar un sistema para la detección de anomalías en
+los servicios de la red. 
+
+Debido a los problemas que presenta una arquitectura centralizada para este tipo
+de sistemas, se decidió diseñar un sistema distribuido que permita aprovechar
+los recursos disponibles en las computadoras que lo integran en pos de su
+funcionamiento. Este paradigma posibilita además la distribución de sus tareas,
+de forma que se balancée la carga del mismo; incrementándose así su eficacia y
+eficiencia.
+
+El sistema que se pretende implementar comprenderá las fases de la metodología
+planteada anteriormente y la retroalimentación del modelo, con el objetivo de
+posibilitar la adaptación a los cambios que se produzcan en el comportamiento de
+los servicios a lo largo del tiempo. Además, para facilitarle el trabajo a los
+administradores se pretende que dicho sistema sea capaz de determinar de forma
+semiautomática o automática las acciones a realizar para recuperarse de la
+ocurrencia de una anomalía. Para ello, se estipuló la clasificación de los
+comportamientos inusuales, de forma que se puedan determinar las acciones a
+realizar para la recuperación ante su ocurrencia. Dicha herramienta notificará
+inmediatamente de la detección de una anomalía y brindará la posibilidad de
+darle seguimiento a cualquier servicio siempre que se brinden los elementos
+necesarios para su funcionamiento. En capítulos posteriores se explicará el
+diseño de dicho sistema, así como los elementos necesarios para la
+instrumentación de la gestión de un nuevo servicio como parte del mismo.
